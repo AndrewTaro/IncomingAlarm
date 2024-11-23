@@ -1,0 +1,31 @@
+(def element IW_IncomingWarning () layout=true
+	(scope
+		(event evArtilleryAlertStart)
+		(event evArtilleryAlertStop)
+
+		(var alertIndication:gfx = "$datahub.getSingleComponent(CC.alertIndication)")
+
+		# (var camera:gfx = "$datahub.getSingleComponent(CC.camera)")
+		# (var isTactical:bool = "camera.isTactical" (event "camera.evTacticalStateChanged"))
+		# (var isBinocular:bool = "camera.isBinocular" (event "camera.evIsBinocularChanged"))
+		# (var cameraMode:number = "camera.mode" (event "camera.evModeChanged"))
+
+		# (var warningCameraModes:array = "[
+		# 	CameraMode.AIRPLANES,
+		# 	CameraMode.TACTICALMAP,
+		# 	CameraMode.SHELLTRACKER,
+		# 	CameraMode.PLANETRACKER,
+		# 	CameraMode.TACTICAL_CONSUMABLE
+		# ]")
+		# (var isWarningEnabled:bool = "isIn(cameraMode, warningCameraModes) || isTactical || isBinocular")
+
+		(var isWarningEnabled:bool = "true")
+	)
+
+	(dispatch evArtilleryAlertStart init=false watch=false (bind enabled "isWarningEnabled") (event "alertIndication.evArtilleryAlert"))
+	(dispatch evArtilleryAlertStop delay=0.2 init=false watch=false (event "evArtilleryAlertStart"))
+
+	(bindcall externalCall 'sound.playSetSoundDirect' "['button_collection_item', 'click']" init=false watch=false (event "evArtilleryAlertStart"))
+	(bindcall externalCall 'sound.playSetSoundDirect' "['experience_counter', 'start']" init=false watch=false (event "evArtilleryAlertStart"))
+	(bindcall externalCall 'sound.playSetSoundDirect' "['experience_counter', 'finish']" init=false watch=false (event "evArtilleryAlertStop"))
+)

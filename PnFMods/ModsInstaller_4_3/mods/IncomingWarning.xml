@@ -1,0 +1,17 @@
+<code>
+	<target_File file="gui/battle_elements.xml">
+		<root_Node>
+			<find_Node tag="elementList">
+				<insert>
+					<element class="lesta.unbound2.UbElement" elementName="IW_IncomingWarning" name="unbound2IW_IncomingWarning">
+						<properties hitTest="false"/>
+					</element>
+					<attrs>
+						<do_if_not_exist tag="element" type="name" name="unbound2IW_IncomingWarning"/>
+					</attrs>
+				</insert>
+			</find_Node>
+		</root_Node>
+	</target_File>
+	<check name="IncomingWarning" version="1.0.0"/>
+</code>
