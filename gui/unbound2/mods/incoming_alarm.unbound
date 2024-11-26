@@ -1,4 +1,4 @@
-(def element IW_IncomingWarning () layout=true
+(def element IA_IncomingAlarm () layout=true
 	(scope
 		(event evArtilleryAlertStart)
 		(event evArtilleryAlertStop)

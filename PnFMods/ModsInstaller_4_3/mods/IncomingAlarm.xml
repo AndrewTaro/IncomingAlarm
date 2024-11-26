@@ -3,11 +3,11 @@
 		<root_Node>
 			<find_Node tag="elementList">
 				<insert>
-					<element class="lesta.unbound2.UbElement" elementName="IW_IncomingWarning" name="unbound2IW_IncomingWarning">
+					<element class="lesta.unbound2.UbElement" elementName="IA_IncomingAlarm" name="unbound2IA_IncomingAlarm">
 						<properties hitTest="false"/>
 					</element>
 					<attrs>
-						<do_if_not_exist tag="element" type="name" name="unbound2IW_IncomingWarning"/>
+						<do_if_not_exist tag="element" type="name" name="unbound2IA_IncomingAlarm"/>
 					</attrs>
 				</insert>
 			</find_Node>
