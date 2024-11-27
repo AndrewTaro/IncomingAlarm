@@ -13,5 +13,5 @@
 			</find_Node>
 		</root_Node>
 	</target_File>
-	<check name="IncomingWarning" version="1.0.0"/>
+	<check name="IncomingAlarm" version="1.0.0"/>
 </code>
